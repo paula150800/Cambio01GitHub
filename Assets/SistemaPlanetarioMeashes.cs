@@ -12,7 +12,7 @@ public class SistemaPlanetarioMeashes : MonoBehaviour
 
     public int numTierras = 3;
 
-    public float rotacionT = 30;
+    public float rotacionTierra = 30;
     public float distanciaT = 5;
     public float escalaT = 0.5f;
 
@@ -109,7 +109,7 @@ public class SistemaPlanetarioMeashes : MonoBehaviour
 
         for (int i = 0; i < numTierras; i++)
         {
-            Matrix4x4 MTierra = MSol * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotacionT + i * 360 / numTierras)) *
+            Matrix4x4 MTierra = MSol * Matrix4x4.Rotate(Quaternion.Euler(0, 0, rotacionTierra + i * 360 / numTierras)) *
                                    Matrix4x4.Translate(new Vector3(distanciaT, + i * separacionT, 0)) *
                                    Matrix4x4.Scale(new Vector3(escalaT, escalaT, 1));
 
@@ -131,7 +131,7 @@ public class SistemaPlanetarioMeashes : MonoBehaviour
 
         }
 
-        rotacionT += velocidadRotacionT * Time.deltaTime;
+        rotacionTierra += velocidadRotacionT * Time.deltaTime;
         rotacionL += velocidadRotacionL * Time.deltaTime;
 
         
